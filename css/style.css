@@ -105,6 +105,20 @@ body {
     color: #cdcd02;
 }
 
+.button__submit {
+    background-color: #cdcd02;
+    color: white;
+    margin-top: 10px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button__submit:hover{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+}
+
 .underline {
     width: 90%;
     height: 2px;

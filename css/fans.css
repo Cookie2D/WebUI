@@ -1,0 +1,45 @@
+.main {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.main__block {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    padding: 15px;
+    text-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+}
+
+.main__detail {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.main__date {
+    font-family: Consolas;
+}
+
+.main__author {
+    font-weight: 700;
+}
+
+.main__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main__textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 12px;
+    border: 1px solid #000;
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box;
+    resize: vertical;
+}
