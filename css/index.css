@@ -18,9 +18,6 @@
 
 
 }
-.image__text {
-    animation: linear 3s bounce infinite;
-}
 
 .main__block {
     margin: 0 auto 50px;
@@ -31,6 +28,7 @@
 .main__heading {
     font-family: 'Anton', sans-serif;
     letter-spacing: 4px;
+    animation: linear 20s bounce infinite;
 }
 
 .main__article {
@@ -38,3 +36,18 @@
     text-align: left;
 }
 
+/* MEDIA */
+
+@media (max-width: 425px) {
+    .main__image {
+        display: none !important;
+    }
+
+    .main {
+        padding-top: 50px;
+    }
+
+    .main__heading {
+        animation: none;
+    }
+}

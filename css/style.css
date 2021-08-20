@@ -1,3 +1,8 @@
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -9,23 +14,25 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1250px;
+    box-sizing: border-box;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 
 /* HEADER */
 .header__inner {
     position: fixed;
+    box-sizing: border-box;
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     background-color: #111111;
     border-radius: 4px 4px 0 0;
     width: inherit;
-    max-width: inherit;
+    max-width: 1170px;
 }
 
 .header__logo {
@@ -37,6 +44,7 @@ body {
 
 /* NAV */
 .nav {
+    display: block;
     padding: 10px 20px;
 }
 
@@ -48,7 +56,7 @@ body {
 .dropdown__content {
     display: none;
     position: absolute;
-    background-color: black;
+    background-color: #111111;
     min-width: 180px;
     z-index: 1;
 }
@@ -112,8 +120,9 @@ body {
 .button__submit {
     background-color: #cdcd02;
     color: white;
+    font-size: 20px;
     margin-top: 10px;
-    padding: 8px 20px;
+    padding: 20px 50px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -127,6 +136,72 @@ body {
     width: 90%;
     height: 2px;
     background-color: #4a4a4a;
+}
+
+/* BURGER */
+
+.burger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 13px 0;
+    margin-left: 20px;
+}
+
+.burger__item {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+
+    font-size: 0;
+    color: transparent;
+    transition: background-color .2s linear;
+
+}
+
+.burger__item:before,
+.burger__item:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+
+    position: absolute;
+    left: 0;
+    z-index: 1;
+
+    transition: all .3s linear;
+}
+
+.burger__item:before {
+    top: -8px;
+}
+
+.burger__item:after {
+    bottom: -8px;
+}
+
+.nav__dropdown:focus .dropdown__content{
+    display: block;
+}
+
+.active .burger__item {
+    background-color: transparent;
+}
+
+.active .burger__item:before {
+    transform: rotate(45deg)!important;
+    top: 0;
+}
+.active .burger__item:after {
+    transform: rotate(-45deg)!important;
+    bottom: 0;
+}
+.visible {
+    display: block!important;
 }
 
 /* ANIMS */
@@ -151,5 +226,59 @@ body {
     }
     100% {
         transform: translate(0px);
+    }
+}
+
+
+/* MEDIA */
+
+@media (max-width: 1200px) {
+    /* HEADER */
+    .header__inner {
+        max-width: Calc(100% - 30px);
+    }
+}
+
+@media (max-width: 750px) {
+    /* NAV */
+    .nav {
+        display: none;
+        max-width: 100px;
+        text-align: left;
+        position: absolute;
+        top: 30px;
+        left: 40px;
+        background-color: #111111;
+        margin-left: 20px;
+    }
+    .links {
+        font-size: 20px;
+    }
+    .links:hover {
+        font-size: 23px;
+    }
+    .dropdown__content {
+        position: absolute;
+        left: 30px;
+    }
+
+    .image__text {
+        font-size: 44px;
+    }
+
+    /* BURGER */
+    .burger {
+        display: block;
+    }
+
+}
+
+@media (max-width: 425px) {
+    .footer__copyright {
+        font-size: 12px;
+    }
+
+    .footer__nav .links {
+        font-size: 16px;
     }
 }

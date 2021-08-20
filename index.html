@@ -2,18 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
   <title>Volleyball</title>
 </head>
 <body>
 <header>
   <div class="container">
     <div class="header__inner">
-      <nav class="nav">
+      <button class="burger" onclick="toggleBurger()">
+        <span class="burger__item">Menu</span>
+      </button>
+      <nav class="nav" id="nav">
         <a href="index.html" class="links">Main</a>
         <div class="nav__dropdown">
           <a class="links">Matches</a>
@@ -38,7 +43,7 @@
   </div>
 </header>
 
-<main>
+<main class="main">
   <div class="container">
     <div class="main__image">
       <p class="image__text">Volleyball Ukraine</p>
@@ -76,5 +81,12 @@
     </div>
   </div>
 </footer>
+
+<script>
+  let toggleBurger = () => {
+    document.getElementById('nav').classList.toggle('visible');
+    document.querySelector('.burger').classList.toggle('active')
+  }
+</script>
 </body>
 </html>
