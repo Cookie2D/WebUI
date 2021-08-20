@@ -15,6 +15,11 @@
 
     background-image: url(../img/mainmenu__intro.jpg);
     background-size: cover;
+
+
+}
+.image__text {
+    animation: linear 3s bounce infinite;
 }
 
 .main__block {
@@ -32,3 +37,4 @@
     text-indent: 5px;
     text-align: left;
 }
+
