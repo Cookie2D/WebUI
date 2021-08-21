@@ -38,6 +38,11 @@
 
 /* MEDIA */
 
+@media (max-width: 1000px) {
+    .main__heading {
+        animation: none;
+    }
+}
 @media (max-width: 425px) {
     .main__image {
         display: none !important;
@@ -45,9 +50,5 @@
 
     .main {
         padding-top: 50px;
-    }
-
-    .main__heading {
-        animation: none;
     }
 }
