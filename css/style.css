@@ -149,6 +149,10 @@ body {
 
 }
 
+.active-link {
+    border-bottom: 3px solid #e6a827;
+}
+
 .button__submit {
     background-color: #cdcd02;
     color: white;
