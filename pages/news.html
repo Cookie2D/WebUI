@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/news.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+  <title>News</title>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="header__inner">
+      <button class="burger" onclick="toggleBurger()">
+        <span class="burger__item">Menu</span>
+      </button>
+      <nav class="nav" id="nav">
+        <a href="../index.html" class="links">Main</a>
+        <div class="nav__dropdown">
+          <a class="links">Matches</a>
+          <div class="dropdown__content">
+            <a href="#" class="links">Calendar of matches</a>
+            <div class="underline"></div>
+            <a href="#" class="links">Next game</a>
+            <a href="#" class="links">Raiting</a>
+          </div>
+        </div>
+        <a href="news.html" class="links">News</a>
+        <a href="fans.html" class="links">Fans</a>
+        <a href="contacts.html" class="links">Contacts</a>
+        <a href="#" class="links">Admin</a>
+      </nav>
+      <div>
+        <a href="../index.html">
+          <img src="../img/logo.png" alt="logo" class="header__logo">
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="container">
+    <h1 class="main__title">Latest news</h1>
+    <div class="main__inner">
+
+      <a href="#" class="main__news">
+        <img src="../img/news/European_championship_2021.jpeg" alt="news image" class="news__image">
+        <h2 class="news__title">European championship 2021</h2>
+        <p class="news__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse explicabo pariatur praesentium!</p>
+      </a>
+
+      <a href="#" class="main__news">
+        <img src="../img/news/Khortytsia_Cup_2021.jpeg" alt="news image" class="news__image">
+        <h2 class="news__title">Khortytsia Cup 2021</h2>
+        <p class="news__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p class="news__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </a>
+
+      <a href="#" class="main__news">
+        <img src="../img/news/Ukraine_loss_start_match_euro2021.jpeg" alt="news image" class="news__image">
+        <h2 class="news__title">The national team of Ukraine lost the opening match of Euro-2021</h2>
+        <p class="news__text">Lorem ipsum dolor sit amet. ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </a>
+
+      <a href="#" class="main__news">
+        <img src="../img/news/Vova_orlov.jpeg" alt="news image" class="news__image">
+        <h2 class="news__title">Vladimir Orlov: "Let's go not to fight, but to play"</h2>
+        <div class="news__text">
+          <p>Lorem ipsumipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsumipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, saepe. elit.</p>
+        </div>
+      </a>
+
+      <a href="#" class="main__news">
+        <img src="../img/news/Ukraine_team.jpeg" alt="news image" class="news__image">
+        <h2 class="news__title">The national team of Ukraine</h2>
+        <div class="news__text">
+          <p>Lorem ipsumipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <p class="footer__copyright">© 2021 WebUI Club. All right reserved.</p>
+      <nav class="footer__nav">
+        <a href="#" class="links">Policy</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+  let toggleBurger = () => {
+    document.getElementById('nav').classList.toggle('visible');
+    document.querySelector('.burger').classList.toggle('active')
+  }
+</script>
+</body>
+</html>

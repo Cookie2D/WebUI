@@ -76,6 +76,38 @@ body {
     background-color: #4a4a4a;
 }
 
+/* MAIN */
+
+.main {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.main__title {
+    overflow: hidden;
+}
+
+.main__title:after,
+.main__title:before{
+    content:"";
+    display: inline-block;
+    height: 16px;
+    vertical-align: bottom;
+    width: 100%;
+    border-top: 2px solid black;
+
+}
+.main__title:after {
+    margin-right: -100%;
+    margin-left: 10px;
+}
+
+.main__title:before {
+    margin-left: -100%;
+    margin-right: 10px;
+
+}
+
 /* FOOTER */
 
 .footer {
