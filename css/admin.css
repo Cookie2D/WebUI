@@ -37,6 +37,11 @@
     box-sizing: border-box;
 }
 
+::placeholder{
+    font-family: Consolas;
+    font-size: 15px;
+}
+
 #news-subtitle {
     width: 100%;
     min-height: 200px;

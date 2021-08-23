@@ -51,14 +51,16 @@
 
       <label for="load-image" class="custom-file-upload">
         <img  id="news-image" alt="your image" src="https://fakeimg.pl/350x220/?text=No image">
-        <input  id="load-image" type="file" accept="image/jpeg, image/png" onchange="document.getElementById('news-image').src = window.URL.createObjectURL(this.files[0])"/>
+        <input  id="load-image" type="file" accept="image/jpeg, image/png" onchange="preview()"/>
         Click to upload image
       </label>
 
       <label for="news-title" class="news__label">News title</label>
       <input type="text" id="news-title" placeholder="Write news title">
+
       <label for="news-subtitle" class="news__label">News text</label>
       <textarea type="" id="news-subtitle" placeholder="Write news text"></textarea>
+
       <input type="submit" class="button__submit">
     </form>
     </div>
@@ -80,6 +82,11 @@
   let toggleBurger = () => {
     document.getElementById('nav').classList.toggle('visible');
     document.querySelector('.burger').classList.toggle('active')
+  }
+
+  let preview = () => {
+    let frame = document.getElementById("news-image")
+    frame.src=URL.createObjectURL(event.target.files[0]);
   }
 </script>
 </body>
