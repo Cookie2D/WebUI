@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/contacts.css">
+  <link rel="stylesheet" href="../css/admin.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-  <title>Contacts</title>
+  <title>Admin</title>
 </head>
 <body>
 <header>
@@ -31,8 +31,8 @@
         </div>
         <a href="news.html" class="links">News</a>
         <a href="fans.html" class="links">Fans</a>
-        <a href="contacts.html" class="links active-link">Contacts</a>
-        <a href="admin.html" class="links">Admin</a>
+        <a href="contacts.html" class="links">Contacts</a>
+        <a href="admin.html" class="links active-link">Admin</a>
       </nav>
       <div>
         <a href="../index.html">
@@ -45,24 +45,23 @@
 
 <main class="main">
   <div class="container">
-    <h1 class="main__title">Contacts</h1>
+    <h1 class="main__title">Admin Page</h1>
     <div class="main__inner">
-    <address class="main__contacts">
-      <ul>
-        <img class="contacts__image" src="../img/contacts/phone.png" alt="Phones">
-        <li>Mark Telephone: 380123456789</li>
-        <li>Steven Telephone: 380123456123</li>
-        <li>Andriana Telephone: 380123453249</li>
-        <img class="contacts__image" src="../img/contacts/email.png" alt="Email">
-        <li>Email: example@gmail.com</li>
-        <img class="contacts__image" src="../img/contacts/map.png" alt="Adress">
-        <li>Adress: вулиця Набережна Перемоги, 9Б, Дніпро</li>
-      </ul>
-    </address>
-    <div class="main__map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d677491.861027701!2d34.51903226562499!3d48.44784529999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbfd537c87ec59%3A0x8d67bb5f6bbceab4!2sBeach%20volleyball!5e0!3m2!1sru!2sua!4v1629522331182!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <form class="main__news">
+
+      <label for="load-image" class="custom-file-upload">
+        <img  id="news-image" alt="your image" src="https://fakeimg.pl/350x220/?text=No image">
+        <input  id="load-image" type="file" accept="image/jpeg, image/png" onchange="document.getElementById('news-image').src = window.URL.createObjectURL(this.files[0])"/>
+        Click to upload image
+      </label>
+
+      <label for="news-title" class="news__label">News title</label>
+      <input type="text" id="news-title" placeholder="Write news title">
+      <label for="news-subtitle" class="news__label">News text</label>
+      <textarea type="" id="news-subtitle" placeholder="Write news text"></textarea>
+      <input type="submit" class="button__submit">
+    </form>
     </div>
-  </div>
   </div>
 </main>
 
