@@ -1,0 +1,31 @@
+.main__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#matches {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#matches td, #matches th {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+#matches th {
+    text-align: center;
+}
+#matches tr {
+    transition: background-color .2s ease-in;
+}
+#matches tr:hover {
+    background-color: #f6f618;
+}
+
+@media (max-width: 426px) {
+    #matches td, #matches th{
+        padding: 8px;
+    }
+}

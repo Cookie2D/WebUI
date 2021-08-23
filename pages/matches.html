@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/contacts.css">
+  <link rel="stylesheet" href="../css/matches.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-  <title>Contacts</title>
+  <title>Matches</title>
 </head>
 <body>
 <header>
@@ -21,7 +21,7 @@
       <nav class="nav" id="nav">
         <a href="../index.html" class="links">Main</a>
         <div class="nav__dropdown">
-          <a class="links">Matches</a>
+          <a class="links active-link">Matches</a>
           <div class="dropdown__content">
             <a href="matches.html" class="links">Calendar of matches</a>
             <div class="underline"></div>
@@ -31,7 +31,7 @@
         </div>
         <a href="news.html" class="links">News</a>
         <a href="fans.html" class="links">Fans</a>
-        <a href="contacts.html" class="links active-link">Contacts</a>
+        <a href="contacts.html" class="links">Contacts</a>
         <a href="admin.html" class="links">Admin</a>
       </nav>
       <div>
@@ -45,24 +45,38 @@
 
 <main class="main">
   <div class="container">
-    <h1 class="main__title">Contacts</h1>
+    <h1 class="main__title">Calendar of Matches</h1>
     <div class="main__inner">
-    <address class="main__contacts">
-      <ul>
-        <img class="contacts__image" src="../img/contacts/phone.png" alt="Phones">
-        <li>Mark Telephone: 380123456789</li>
-        <li>Steven Telephone: 380123456123</li>
-        <li>Andriana Telephone: 380123453249</li>
-        <img class="contacts__image" src="../img/contacts/email.png" alt="Email">
-        <li>Email: example@gmail.com</li>
-        <img class="contacts__image" src="../img/contacts/map.png" alt="Adress">
-        <li>Adress: вулиця Набережна Перемоги, 9Б, Дніпро</li>
-      </ul>
-    </address>
-    <div class="main__map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d677491.861027701!2d34.51903226562499!3d48.44784529999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbfd537c87ec59%3A0x8d67bb5f6bbceab4!2sBeach%20volleyball!5e0!3m2!1sru!2sua!4v1629522331182!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <table id="matches">
+
+          <tr>
+            <th>Date of the match</th>
+            <th>Venue</th>
+            <th>Opponent / tournament</th>
+          </tr>
+
+        <tr>
+          <td>23.09.2021</td>
+          <td>Ukraine, Kyiv</td>
+          <td>Russian / Local tournament</td>
+        </tr>
+        <tr>
+          <td>30.09.2021</td>
+          <td>Ukraine, Lviv</td>
+          <td>Ukraine / Tournament Qualifications</td>
+        </tr>
+        <tr>
+          <td>5.10.2021</td>
+          <td>France, Paris</td>
+          <td>France, Tournament 2021</td>
+        </tr>
+        <tr>
+          <td>20.11.2021</td>
+          <td>Italy, Venice</td>
+          <td>China, End of the season 2021</td>
+        </tr>
+      </table>
     </div>
-  </div>
   </div>
 </main>
 
