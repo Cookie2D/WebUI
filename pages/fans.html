@@ -57,7 +57,7 @@
           labore minus non odio omnis quaerat qui quo quos reprehenderit sed? Eligendi, harum?
           <div class="main__detail">
             <div class="main__date">19.08.2021, 14:43</div>
-            <div class="main__author">Valleyball Fan2021</div>
+            <div class="main__author">Volleyball Fan2021</div>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@
           labore minus non odio omnis quaerat qui quo quos reprehenderit sed? Eligendi, harum?
           <div class="main__detail">
             <div class="main__date">19.08.2021, 14:43</div>
-            <div class="main__author">Valleyball Fan2021</div>
+            <div class="main__author">Volleyball Fan2021</div>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@
     </div>
 
     <div class="main__block">
-      <form onsubmit="formSubmit(); return false;" class="main__form" name="requestForm">
+      <form onsubmit="formSubmit(); return false;" class="main__form" id="requestForm">
         <textarea required id="request" name="userRequest" placeholder="Write request here.."
                   class="main__textarea"></textarea>
 
@@ -107,13 +107,13 @@
   }
 
   let formSubmit = () => {
-    let text, author;
-    let dateNow = new Date();
-    let myForm = document.forms[0];
+    const myForm = document.forms[0];
+    let text, author, dateNow = new Date();
 
-    text = myForm.userRequest.value
-    if (text === '' || text === null || text === undefined) return false;
-    if (!author) author = "Guest"
+    text = myForm.userRequest.value;
+
+    if (!text) return false;
+    if (!author) author = "Guest";
 
     let date = dateNow
       .toISOString()
@@ -124,28 +124,18 @@
     let fullDate = `${date}, ${dateNow.getHours()}:${dateNow.getMinutes()}`
 
     const posts = document.querySelector(".posts");
-    const mainBlock = createElementWithClass('div', 'main__block');
-    const mainText = createElementWithClass('div', 'main__text');
-    const mainDetail = createElementWithClass('div', 'main__detail');
-    const mainDate = createElementWithClass('div', 'main__date');
-    const mainAuthor = createElementWithClass('div', 'main__author');
-
-    mainDate.append(fullDate);
-    mainAuthor.append(author);
-    mainDetail.appendChild(mainDate);
-    mainDetail.appendChild(mainAuthor);
-    mainText.append(text);
-    mainBlock.appendChild(mainText);
-    mainBlock.appendChild(mainDetail);
-    posts.appendChild(mainBlock);
+    const post = `
+      <div class="main__block">
+        <div class="main__text">${text}
+          <div class="main__detail">
+            <div class="main__date">${fullDate}</div>
+            <div class="main__author">${author}</div>
+          </div>
+        </div>
+      </div>`;
+    posts.insertAdjacentHTML("beforeend", post);
 
     myForm.reset();
-
-    function createElementWithClass(elementTag, className) {
-      const element = document.createElement(elementTag);
-      element.classList.add(className);
-      return element;
-    }
   }
 </script>
 </body>
