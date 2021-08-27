@@ -45,40 +45,47 @@
 
 <main class="main">
   <div class="container">
-  <h1 class="main__title">Fans request</h1>
-  <div class="main__block">
-    <div class="main__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae cumque
-      cupiditate dicta dolore dolorum ea earum, eius fuga fugit illo illum in, ipsam libero nihil non odit optio,
-      placeat possimus quae quas quasi quibusdam quidem quod ratione sed tenetur totam ullam velit voluptatibus.
-      Architecto dignissimos  Ad exercitationem ipsa omnis? Animi architecto consequuntur dolor, dolores, esse impedit
-      labore minus non odio omnis quaerat qui quo quos reprehenderit sed? Eligendi, harum?
-      <div class="main__detail">
-        <div class="main__date">19.08.2021, 14:43</div>
-        <div class="main__author">Valleyball Fan2021</div>
-      </div>
-    </div>
-  </div>
+    <h1 class="main__title">Fans request</h1>
+    <div class="posts">
 
-  <div class="main__block">
-    <div class="main__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae cumque
-      cupiditate dicta dolore dolorum ea earum, eius fuga fugit illo illum in, ipsam libero nihil non odit optio,
-      placeat possimus quae quas quasi quibusdam quidem quod ratione sed tenetur totam ullam velit voluptatibus.
-      Architecto dignissimos  Ad exercitationem ipsa omnis? Animi architecto consequuntur dolor, dolores, esse impedit
-      labore minus non odio omnis quaerat qui quo quos reprehenderit sed? Eligendi, harum?
-      <div class="main__detail">
-        <div class="main__date">19.08.2021, 14:43</div>
-        <div class="main__author">Valleyball Fan2021</div>
+      <div class="main__block">
+        <div class="main__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae cumque
+          cupiditate dicta dolore dolorum ea earum, eius fuga fugit illo illum in, ipsam libero nihil non odit optio,
+          placeat possimus quae quas quasi quibusdam quidem quod ratione sed tenetur totam ullam velit voluptatibus.
+          Architecto dignissimos Ad exercitationem ipsa omnis? Animi architecto consequuntur dolor, dolores, esse
+          impedit
+          labore minus non odio omnis quaerat qui quo quos reprehenderit sed? Eligendi, harum?
+          <div class="main__detail">
+            <div class="main__date">19.08.2021, 14:43</div>
+            <div class="main__author">Valleyball Fan2021</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  
-  <div class="main__block">
-    <form action="" class="main__form">
-      <textarea id="request" name="request" placeholder="Write request here.." class="main__textarea"></textarea>
 
-      <input type="submit" value="Submit" class="button__submit">
-    </form>
-  </div>
+      <div class="main__block">
+        <div class="main__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae cumque
+          cupiditate dicta dolore dolorum ea earum, eius fuga fugit illo illum in, ipsam libero nihil non odit optio,
+          placeat possimus quae quas quasi quibusdam quidem quod ratione sed tenetur totam ullam velit voluptatibus.
+          Architecto dignissimos Ad exercitationem ipsa omnis? Animi architecto consequuntur dolor, dolores, esse
+          impedit
+          labore minus non odio omnis quaerat qui quo quos reprehenderit sed? Eligendi, harum?
+          <div class="main__detail">
+            <div class="main__date">19.08.2021, 14:43</div>
+            <div class="main__author">Valleyball Fan2021</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="main__block">
+      <form onsubmit="formSubmit(); return false;" class="main__form" name="requestForm">
+        <textarea required id="request" name="userRequest" placeholder="Write request here.."
+                  class="main__textarea"></textarea>
+
+        <input type="submit" value="Submit" class="button__submit">
+      </form>
+    </div>
   </div>
 </main>
 
@@ -97,6 +104,46 @@
   let toggleBurger = () => {
     document.getElementById('nav').classList.toggle('visible');
     document.querySelector('.burger').classList.toggle('active')
+  }
+
+  let formSubmit = () => {
+    let text, author;
+    let dateNow = new Date();
+    let myForm = document.forms[0];
+
+    text = myForm.userRequest.value
+    if (text === '' || text === null || text === undefined) return false;
+    if (!author) author = "Guest"
+
+    let date = dateNow
+      .toISOString()
+      .slice(0, 10)
+      .split('-')
+      .reverse()
+      .join('.');
+    let fullDate = `${date}, ${dateNow.getHours()}:${dateNow.getMinutes()}`
+
+    const posts = document.querySelector(".posts");
+    const mainBlock = createElementWithClass('div', 'main__block');
+    const mainText = createElementWithClass('div', 'main__text');
+    const mainDetail = createElementWithClass('div', 'main__detail');
+    const mainDate = createElementWithClass('div', 'main__date');
+    const mainAuthor = createElementWithClass('div', 'main__author');
+
+    mainDate.append(fullDate);
+    mainAuthor.append(author)
+    mainDetail.appendChild(mainDate)
+    mainDetail.appendChild(mainAuthor)
+    mainText.append(text)
+    mainBlock.appendChild(mainText)
+    mainBlock.appendChild(mainDetail)
+    posts.appendChild(mainBlock)
+
+    function createElementWithClass(elementTag, className) {
+      const element = document.createElement(elementTag);
+      element.classList.add(className);
+      return element;
+    }
   }
 </script>
 </body>
