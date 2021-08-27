@@ -131,13 +131,15 @@
     const mainAuthor = createElementWithClass('div', 'main__author');
 
     mainDate.append(fullDate);
-    mainAuthor.append(author)
-    mainDetail.appendChild(mainDate)
-    mainDetail.appendChild(mainAuthor)
-    mainText.append(text)
-    mainBlock.appendChild(mainText)
-    mainBlock.appendChild(mainDetail)
-    posts.appendChild(mainBlock)
+    mainAuthor.append(author);
+    mainDetail.appendChild(mainDate);
+    mainDetail.appendChild(mainAuthor);
+    mainText.append(text);
+    mainBlock.appendChild(mainText);
+    mainBlock.appendChild(mainDetail);
+    posts.appendChild(mainBlock);
+
+    myForm.reset();
 
     function createElementWithClass(elementTag, className) {
       const element = document.createElement(elementTag);
