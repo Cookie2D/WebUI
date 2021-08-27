@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM</title>
+</head>
+<body>
+<!--First Task-->
+<ul id="list">
+  <li>User 1</li>
+  <li>User 2</li>
+  <li>User 3</li>
+  <li>User 4</li>
+  <li>User 5</li>
+</ul>
+
+<p id="output"></p>
+
+<!--Second Task-->
+<h1>I'am a big header!!!</h1>
+<div id="myDiv">
+  <p>First paragraph</p>
+  <p>Second paragraph</p>
+  <p>Third paragraph</p>
+  <p>Fourth paragraph</p>
+</div>
+<ul id="myList">
+  <li>Make</li>
+  <li>me</li>
+  <li>horizontal!</li>
+</ul>
+<span>Make me invisible, please!</span>
+
+<!--Third Task-->
+<input type="button" value="Live button!" id="liveButton">
+<div id="output3">
+</div>
+<script>
+  function firstTask() {
+    const list = document.getElementById("list");
+    const output = document.getElementById("output");
+    const p1 = document.createElement('p');
+
+    p1.append('First: ');
+    p1.append(list.firstElementChild.innerHTML + ', ');
+    p1.append(list.lastElementChild.innerHTML + ', ');
+    p1.append(list.firstElementChild.nextElementSibling.innerHTML + ', ');
+    p1.append(list.lastElementChild.previousElementSibling.innerHTML + ', ');
+    p1.append(list.firstElementChild.nextElementSibling.nextElementSibling.innerHTML);
+    output.appendChild(p1);
+
+    const p2 = document.createElement('p');
+    p2.append('Second: ');
+    p2.append(list.children[0].innerHTML + ', ');
+    p2.append(list.children[4].innerHTML + ', ');
+    p2.append(list.children[1].innerHTML + ', ');
+    p2.append(list.children[3].innerHTML + ', ');
+    p2.append(list.children[2].innerHTML + ', ');
+    output.appendChild(p2);
+  }
+
+  firstTask()
+
+  function secondTask() {
+    document.getElementsByTagName("h1")[0].style.backgroundColor = "#62c462";
+
+    const div = document.getElementById("myDiv");
+    div.children[0].style.fontWeight = "700";
+    div.children[1].style.color = "red";
+    div.children[2].style.textDecoration = "underline";
+    div.children[3].style.fontStyle = "italic";
+
+    const list = document.getElementById("myList");
+    list.style.display = "flex";
+    list.style.listStyleType = "none";
+
+    document.querySelector("span").hidden = true;
+  }
+
+  secondTask();
+
+  function thirdTask() {
+    const button = document.getElementById("liveButton");
+    const output = document.getElementById("output3");
+    button.addEventListener("mousedown", () => appendText(output, 'I was pressed'));
+    button.addEventListener("mouseover", () => appendText(output, 'Mouse on me!'));
+    button.addEventListener("mouseleave", () => appendText(output, 'Mouse is not on me!'));
+
+    function appendText(element, text) {
+      const p = document.createElement("p");
+      p.append(text);
+      element.appendChild(p);
+    }
+  }
+
+  thirdTask();
+</script>
+</body>
+</html>
