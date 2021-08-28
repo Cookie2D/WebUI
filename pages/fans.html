@@ -121,19 +121,21 @@
       .split('-')
       .reverse()
       .join('.');
-    let fullDate = `${date}, ${dateNow.getHours()}:${dateNow.getMinutes()}`
+    let time = dateNow.toLocaleTimeString().slice(0,5)
 
     const posts = document.querySelector(".posts");
     const post = `
       <div class="main__block">
-        <div class="main__text">${text}
+        <div class="main__text">
           <div class="main__detail">
-            <div class="main__date">${fullDate}</div>
+            <div class="main__date">${date}, ${time}</div>
             <div class="main__author">${author}</div>
           </div>
         </div>
       </div>`;
     posts.insertAdjacentHTML("beforeend", post);
+    let textNode = document.querySelectorAll('.main__text');
+    textNode[textNode.length - 1].insertAdjacentText('afterbegin', text);
 
     myForm.reset();
   }
