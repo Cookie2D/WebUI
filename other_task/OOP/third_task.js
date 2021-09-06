@@ -48,12 +48,7 @@ for (let worker of workers) {
   Worker.test(worker);
 }
 
-workers[2].experience = 1.3;
-const mostExperiencedWorkers = workers.reduce((most, worker) =>
-  worker.experience > most ? worker.experience : most, 1);
-
 const sortedExperiencedWorkers = workers
-  .filter(worker => worker.experience === mostExperiencedWorkers)
   .sort((a, b) => a.salary - b.salary);
 
 console.log('\nSorted salary of the most experienced workers:')
