@@ -1,20 +1,21 @@
 class Worker {
+  #experience = 1.2;
+
   constructor(fullName, dayRate, workingDays) {
     this.fullName = fullName;
     this.dayRate = dayRate;
     this.workingDays = workingDays;
-    this._experience = 1.2;
     this.salary = this.dayRate * this.workingDays;
-    this.salaryWithExperience = this.salary * this.experience;
+    this.salaryWithExperience = this.salary * this.#experience;
   }
 
   get experience() {
-    return this._experience;
+    return this.#experience;
   }
 
   set experience(value) {
     if (value < 0) throw new Error("Experience cant be negative");
-    this._experience = value;
+    this.#experience = value;
     this.salaryWithExperience = this.salary * this.experience;
   }
 
