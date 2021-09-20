@@ -1,3 +1,17 @@
+let n = 100;
+
+// 67) Дано натуральное число n ( n<= 100)
+// б) Чему равна сума его цифр.
+
+function sumOfNums(num) {
+  return num
+    .toString()
+    .split('')
+    .reduce((prev, cur) => +prev + +cur)
+}
+
+console.log(sumOfNums(n))
+
 n = 6000
 
 // 68) Дано натуральное число n ( n <= 9999)
@@ -17,3 +31,5 @@ function threeDigits(n) {
 }
 
 console.log(threeDigits(n))
+
+module.exports = {sumOfNums, threeDigits};
